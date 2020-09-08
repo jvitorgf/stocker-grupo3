@@ -23,6 +23,7 @@ public class Banco {
     
     public boolean Banco(){
         System.out.println("Teste para o github");
+        System.out.println("Teste 2 para o github");
         try {
             String usuario = "postgres";
             String senha = "teste";
