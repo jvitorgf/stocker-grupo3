@@ -20,8 +20,6 @@ SET row_security = off;
 
 SET default_tablespace = '';
 
-SET default_table_access_method = heap;
-
 --
 -- TOC entry 202 (class 1259 OID 16440)
 -- Name: item; Type: TABLE; Schema: public; Owner: postgres
