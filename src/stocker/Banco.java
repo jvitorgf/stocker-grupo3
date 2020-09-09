@@ -25,6 +25,7 @@ public class Banco {
         System.out.println("Teste para o github");
         System.out.println("Teste 2 para o github");
         System.out.println("Teste 3 para o github");
+        System.out.println("Teste 4 para o github");
         try {
             String usuario = "postgres";
             String senha = "teste";
