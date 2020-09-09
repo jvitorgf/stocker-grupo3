@@ -1,6 +1,6 @@
 
 language: java
-install: ant deps
+install: ant 
 jdk:
  - openjdk8
  - openjdk11
