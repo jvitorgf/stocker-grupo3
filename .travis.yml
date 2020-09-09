@@ -1,9 +1,7 @@
 
 language: java
-addons:
-  apt:
-    packages:
-      - ant
+script: ant build
+
 jdk:
  - openjdk8
  - openjdk11
