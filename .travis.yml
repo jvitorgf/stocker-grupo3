@@ -2,7 +2,6 @@ services:
 - postgresql
 before_script:
 - psql -c 'CREATE DATABASE "banco-stocker" WITH OWNER = postgres ENCODING = 'UTF8'  CONNECTION LIMIT = -1;'
-- psql -U postgres -d banco-stocker -f banco/banco.sql
 - psql -U postgres -d banco-stocker -f banco/tabela.sql
 
 before_install:
