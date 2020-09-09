@@ -1,6 +1,9 @@
 
 language: java
-ant test
+addons:
+  apt:
+    packages:
+      - ant
 jdk:
  - openjdk8
  - openjdk11
