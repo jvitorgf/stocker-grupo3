@@ -22,13 +22,10 @@ public class Banco {
     
     
     public boolean Banco(){
-        System.out.println("Teste para o github");
-        System.out.println("Teste 2 para o github");
-        System.out.println("Teste 3 para o github");
-        System.out.println("Teste 4 para o github");
+ 
         try {
             String usuario = "postgres";
-            String senha = "teste";
+            String senha = "sergipe314";
 
             Class.forName("org.postgresql.Driver");  //para acesso ao banco de dados Postgres
             String urlconexao = "jdbc:postgresql://127.0.0.1/banco-stocker"; 
@@ -77,6 +74,84 @@ public class Banco {
         } catch (SQLException erro) {
             System.out.println("Erro ao inserir = " + erro);
         }
+    }
+    
+    public void editaItem(int idb,int id,String nome, String desc,double valor){
+    
+        
+        try {
+            String sqldml = "UPDATE item SET nome = '"+nome+"',id = "+id+
+                    ",descricao = '"+desc+"',valor = "+valor+" "
+                    + "WHERE id = '"+idb+"'";
+            
+            
+            int tipo1 = ResultSet.TYPE_SCROLL_SENSITIVE;
+            int concorrencia = ResultSet.CONCUR_UPDATABLE;
+            pstdados = connection.prepareStatement(sqldml, tipo1, concorrencia);
+            
+           
+            int resposta = pstdados.executeUpdate();
+            connection.commit();
+            System.out.println("Resposta do P-Update = " + resposta);
+
+        } catch (SQLException erro) {
+            System.out.println("Erro ao atualizar = " + erro);
+        }
+        
+    }
+    
+    
+    
+    public void excluiItem(int idb){
+    
+        
+        try {
+            String sqldml = "DELETE FROM item"+" WHERE id = '"+idb+"'";
+            
+            
+            int tipo1 = ResultSet.TYPE_SCROLL_SENSITIVE;
+            int concorrencia = ResultSet.CONCUR_UPDATABLE;
+            pstdados = connection.prepareStatement(sqldml, tipo1, concorrencia);
+            
+           
+            int resposta = pstdados.executeUpdate();
+            connection.commit();
+            System.out.println("Resposta do P-Update = " + resposta);
+
+        } catch (SQLException erro) {
+            System.out.println("Erro ao atualizar = " + erro);
+        }
+        
+    }
+    
+    
+    public String[] consultaItem(int idb) {
+        try {
+
+            String sqldml = "SELECT * FROM item "
+                    + "WHERE id = '" +idb+ "'";
+
+            int tipo1 = ResultSet.TYPE_SCROLL_SENSITIVE;
+            int concorrencia = ResultSet.CONCUR_UPDATABLE;
+            pstdados = connection.prepareStatement(sqldml, tipo1, concorrencia);
+            ResultSet ts = pstdados.executeQuery();
+            ts.last();
+            String[] a = new String[4];
+         
+            for (int i = 0; i < 4; i++) {
+                a[i] = new String();
+                a[i] = ts.getString(i+1);
+    
+      
+            }
+            
+            return a;
+
+        } catch (SQLException erro) {
+            System.out.println("Erro ao consultar = " + erro);
+        }
+        return null;
+
     }
   
 }
