@@ -1,8 +1,8 @@
 services:
 - postgresql
 before_script:
-- psql -U postgres -d teste -f banco/banco.sql
-- psql -U postgres -d teste -f banco/tabela.sql
+- psql -U postgres -d banco-stocker -f banco/banco.sql
+- psql -U postgres -d banco-stocker -f banco/tabela.sql
 
 before_install:
     - wget --no-check-certificate https://downloads.apache.org//ant/binaries/apache-ant-1.10.8-bin.tar.gz
