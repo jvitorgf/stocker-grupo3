@@ -25,7 +25,7 @@ public class Banco {
  
         try {
             String usuario = "postgres";
-            String senha = "sergipe314";
+            String senha = "";
 
             Class.forName("org.postgresql.Driver");  //para acesso ao banco de dados Postgres
             String urlconexao = "jdbc:postgresql://127.0.0.1/banco-stocker"; 
