@@ -77,9 +77,9 @@ public class Banco {
         return reposta;
     }
     
-    public void editaItem(int idb,int id,String nome, String desc,double valor){
+    public int editaItem(int idb,int id,String nome, String desc,double valor){
     
-        
+        int reposta = 0;
         try {
             String sqldml = "UPDATE item SET nome = '"+nome+"',id = "+id+
                     ",descricao = '"+desc+"',valor = "+valor+" "
@@ -91,14 +91,14 @@ public class Banco {
             pstdados = connection.prepareStatement(sqldml, tipo1, concorrencia);
             
            
-            int reposta = pstdados.executeUpdate();
+            reposta = pstdados.executeUpdate();
             connection.commit();
             System.out.println("Reposta do P-Update = " + reposta);
 
         } catch (SQLException erro) {
             System.out.println("Erro ao atualizar = " + erro);
         }
-        
+        return reposta;
     }
     
     

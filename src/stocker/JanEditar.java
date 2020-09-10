@@ -5,6 +5,8 @@
  */
 package stocker;
 
+import javax.swing.JOptionPane;
+
 
 
 /**
@@ -265,7 +267,17 @@ public class JanEditar extends javax.swing.JFrame {
         int id = Integer.parseInt(text1);
         double valor = Double.parseDouble(text4);
 
-        acessa.editaItem(idB,id, nome, desc, valor);
+        int reposta = acessa.editaItem(idB,id, nome, desc, valor);
+        if(reposta == 1){
+         JOptionPane.showMessageDialog(rootPane, "Produto Alterado com sucesso");   
+        }else{
+            JOptionPane.showMessageDialog(rootPane, "Não foi possivel alterar o produto");
+        }
+        jTextField1.setText("");
+        jTextField2.setText("");
+        jTextField3.setText("");
+        jTextField4.setText("");
+        jTextField5.setText("");
   
     }//GEN-LAST:event_jButton1ActionPerformed
 
