@@ -5,6 +5,8 @@
  */
 package stocker;
 
+import javax.swing.JOptionPane;
+
 
 
 /**
@@ -240,7 +242,16 @@ public class JanInserir extends javax.swing.JFrame {
         int id = Integer.parseInt(text1);
         double valor = Double.parseDouble(text4);
 
-        acessa.insereItem(id, nome, desc, valor);
+        int reposta = acessa.insereItem(id, nome, desc, valor);
+        if(reposta == 1){
+         JOptionPane.showMessageDialog(rootPane, "Produto Cadastrado");   
+        }else{
+            JOptionPane.showMessageDialog(rootPane, "Não foi possivel cadastrar o produto");
+        }
+        jTextField1.setText("");
+        jTextField2.setText("");
+        jTextField3.setText("");
+        jTextField4.setText("");
   
     }//GEN-LAST:event_jButton1ActionPerformed
 

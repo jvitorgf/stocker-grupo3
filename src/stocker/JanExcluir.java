@@ -5,6 +5,8 @@
  */
 package stocker;
 
+import javax.swing.JOptionPane;
+
 
 
 /**
@@ -192,7 +194,13 @@ public class JanExcluir extends javax.swing.JFrame {
         int idb = Integer.parseInt(text1);
   
 
-        acessa.excluiItem(idb);
+        int reposta = acessa.excluiItem(idb);
+        if(reposta == 1){
+         JOptionPane.showMessageDialog(rootPane, "Produto Excluido");   
+        }else{
+            JOptionPane.showMessageDialog(rootPane, "Não foi possivel excluir o produto");
+        }
+        jTextField1.setText("");
   
     }//GEN-LAST:event_jButton1ActionPerformed
 
