@@ -19,8 +19,8 @@ public class Banco {
     private ResultSet rsdados = null;
     private PreparedStatement pstdados = null;
     private CallableStatement cstdados = null;
-    
-    
+    //teste
+
     public boolean Banco(){
  
         try {
