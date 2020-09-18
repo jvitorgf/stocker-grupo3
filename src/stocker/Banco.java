@@ -49,8 +49,8 @@ public class Banco {
     
 
     
-    public void insereItem (int id,String nome, String desc,double valor) {
-       
+    public int insereItem (int id,String nome, String desc,double valor) {
+       int reposta = 0;
         try {
             
             String sqldml = "INSERT INTO item (id,nome,descricao,valor) "
@@ -66,19 +66,20 @@ public class Banco {
             pstdados.setString(3, desc);
             pstdados.setDouble(4, valor);
    
-            int resposta = pstdados.executeUpdate();
+            reposta = pstdados.executeUpdate();
             connection.commit();
-            System.out.println("Resposta do P-Update = " + resposta);
+            System.out.println("Reposta do P-Update = " + reposta);
             System.out.println("Item inserido com sucesso.");
 
         } catch (SQLException erro) {
             System.out.println("Erro ao inserir = " + erro);
         }
+        return reposta;
     }
     
-    public void editaItem(int idb,int id,String nome, String desc,double valor){
+    public int editaItem(int idb,int id,String nome, String desc,double valor){
     
-        
+        int reposta = 0;
         try {
             String sqldml = "UPDATE item SET nome = '"+nome+"',id = "+id+
                     ",descricao = '"+desc+"',valor = "+valor+" "
@@ -90,21 +91,21 @@ public class Banco {
             pstdados = connection.prepareStatement(sqldml, tipo1, concorrencia);
             
            
-            int resposta = pstdados.executeUpdate();
+            reposta = pstdados.executeUpdate();
             connection.commit();
-            System.out.println("Resposta do P-Update = " + resposta);
+            System.out.println("Reposta do P-Update = " + reposta);
 
         } catch (SQLException erro) {
             System.out.println("Erro ao atualizar = " + erro);
         }
-        
+        return reposta;
     }
     
     
     
-    public void excluiItem(int idb){
+    public int excluiItem(int idb){
     
-        
+        int reposta = 0;
         try {
             String sqldml = "DELETE FROM item"+" WHERE id = '"+idb+"'";
             
@@ -114,14 +115,14 @@ public class Banco {
             pstdados = connection.prepareStatement(sqldml, tipo1, concorrencia);
             
            
-            int resposta = pstdados.executeUpdate();
+            reposta = pstdados.executeUpdate();
             connection.commit();
-            System.out.println("Resposta do P-Update = " + resposta);
+            System.out.println("Reposta do P-Update = " + reposta);
 
         } catch (SQLException erro) {
             System.out.println("Erro ao atualizar = " + erro);
         }
-        
+        return reposta;
     }
     
     
