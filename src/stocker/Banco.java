@@ -6,6 +6,7 @@
 package stocker;
 
 import java.sql.*;
+import javax.swing.JOptionPane;
 
 
 /**
@@ -25,7 +26,7 @@ public class Banco {
  
         try {
             String usuario = "postgres";
-            String senha = "";
+            String senha = "sergipe314";
 
             Class.forName("org.postgresql.Driver");  //para acesso ao banco de dados Postgres
             String urlconexao = "jdbc:postgresql://127.0.0.1/banco-stocker"; 
@@ -149,7 +150,7 @@ public class Banco {
             return a;
 
         } catch (SQLException erro) {
-            System.out.println("Erro ao consultar = " + erro);
+                JOptionPane.showMessageDialog(null, "Erro: item não existe !");
         }
         return null;
 
