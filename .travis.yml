@@ -12,12 +12,6 @@ before_install:
 
 language: java
 
-deploy:
-  provider: heroku
-  app: stocker-grupo3
-  edge: true
-  on:
-    repo: jvitorgf/stocker-grupo3
 jdk:
  - openjdk11
 
