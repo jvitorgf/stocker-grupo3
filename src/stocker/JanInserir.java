@@ -239,15 +239,19 @@ public class JanInserir extends javax.swing.JFrame {
         String nome  = jTextField2.getText();
         String desc  = jTextField3.getText();
         String text4  = jTextField4.getText();
-        int id = Integer.parseInt(text1);
-        double valor = Double.parseDouble(text4);
-
-        int reposta = acessa.insereItem(id, nome, desc, valor);
-        if(reposta == 1){
-         JOptionPane.showMessageDialog(rootPane, "Produto Cadastrado");   
-        }else{
-            JOptionPane.showMessageDialog(rootPane, "Não foi possivel cadastrar o produto");
+        try{
+            int id = Integer.parseInt(text1);
+            double valor = Double.parseDouble(text4);
+            int reposta = acessa.insereItem(id, nome, desc, valor);
+            if(reposta == 1){
+                JOptionPane.showMessageDialog(rootPane, "Produto Cadastrado");   
+            }else{
+                JOptionPane.showMessageDialog(rootPane, "Não foi possivel cadastrar o produto");
+            }
+        } catch (NumberFormatException erro){
+            JOptionPane.showMessageDialog(null, "Erro : Formato Inválido em id ou valor");
         }
+            
         jTextField1.setText("");
         jTextField2.setText("");
         jTextField3.setText("");
