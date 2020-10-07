@@ -264,14 +264,18 @@ public class JanEditar extends javax.swing.JFrame {
         String nome  = jTextField2.getText();
         String desc  = jTextField3.getText();
         String text4  = jTextField4.getText();
-        int id = Integer.parseInt(text1);
-        double valor = Double.parseDouble(text4);
+        try{
+            int id = Integer.parseInt(text1);
+            double valor = Double.parseDouble(text4);
 
-        int reposta = acessa.editaItem(idB,id, nome, desc, valor);
-        if(reposta == 1){
-         JOptionPane.showMessageDialog(rootPane, "Produto Alterado com sucesso");   
-        }else{
-            JOptionPane.showMessageDialog(rootPane, "Não foi possivel alterar o produto");
+            int reposta = acessa.editaItem(idB,id, nome, desc, valor);
+            if(reposta == 1){
+             JOptionPane.showMessageDialog(rootPane, "Produto Alterado com sucesso");   
+            }else{
+                JOptionPane.showMessageDialog(rootPane, "Não foi possivel alterar o produto");
+            }
+        } catch (NumberFormatException erro){
+            JOptionPane.showMessageDialog(null, "Erro : Formato Inválido em id ou valor");
         }
         jTextField1.setText("");
         jTextField2.setText("");
