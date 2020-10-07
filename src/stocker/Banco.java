@@ -8,7 +8,6 @@ package stocker;
 import java.sql.*;
 import javax.swing.JOptionPane;
 
-//teste
 /**
  *
  * @author jvitorgf
