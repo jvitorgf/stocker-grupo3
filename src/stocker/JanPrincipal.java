@@ -141,7 +141,7 @@ public class JanPrincipal extends javax.swing.JFrame {
                 .addComponent(jLabel2))
         );
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Anderson Tonon\\Documents\\NetBeansProjects\\stocker-grupo3-master\\src\\stocker\\gestão-de-estoque.png"));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/stocker/Imagens/gestão-de-estoque.png"))); // NOI18N
         jLabel3.setText("jLabel3");
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Vermelho", "Amarelo", "Azul", "Cinza", "Verde" }));

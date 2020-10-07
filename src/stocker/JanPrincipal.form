@@ -248,8 +248,8 @@
         </Container>
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-              <Connection code="new javax.swing.ImageIcon(&quot;C:\\Users\\Anderson Tonon\\Documents\\NetBeansProjects\\stocker-grupo3-master\\src\\stocker\\gest&#xe3;o-de-estoque.png&quot;)" type="code"/>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/stocker/Imagens/gest&#xe3;o-de-estoque.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jLabel3"/>
           </Properties>
